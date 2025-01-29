@@ -86,6 +86,7 @@ h2 {
     font-size: 16px;
     width: 100%;
     transition: 0.3s;
+    margin-top: 20px;
 }
 
 .btn:hover {
@@ -166,4 +167,85 @@ h2 {
     cursor: pointer;
     background: lightblue;
     border-radius: 5px;
+}
+
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 400px;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.bar {
+    width: 60px;
+    background: rgba(0, 0, 255, 0.6);
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 5px;
+    position: relative;
+    transition: height 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.bar span {
+    position: relative;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: #333;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.bar:nth-child(1) {
+    height: 50%;
+}
+
+.bar:nth-child(2) {
+    height: 100%;
+}
+
+.bar:nth-child(3) {
+    height: 20%;
+}
+
+.bar::after {
+    content: attr(data-value);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: black;
 }
