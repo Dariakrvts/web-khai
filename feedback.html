@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зворотний зв'язок</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+        .container h2 {
+            color: #185a9d;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .input-box {
+            width: 100%;
+            margin: 15px 0;
+            text-align: left;
+        }
+        .input-box input, .input-box textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.3s;
+            box-sizing: border-box;
+        }
+        .input-box input:focus, .input-box textarea:focus {
+            border-color: #185a9d;
+            outline: none;
+        }
+        .input-box textarea {
+            min-height: 100px;
+            max-height: 300px;
+            resize: none;
+            overflow: hidden;
+        }
+        .btn {
+            background: #185a9d;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #104e75;
+        }
+    </style>
+    <script>
+        function autoResizeTextarea(event) {
+            const textarea = event.target;
+            textarea.style.height = "100px";
+            if (textarea.value.trim() !== "") {
+                textarea.style.height = textarea.scrollHeight + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Зворотний зв'язок</h2>
+        <form>
+            <div class="input-box">
+                <input type="text" placeholder="Ваше ім'я" required>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Ваш Email" required>
+            </div>
+            <div class="input-box">
+                <textarea placeholder="Ваше повідомлення" oninput="autoResizeTextarea(event)" required></textarea>
+            </div>
+            <button type="submit" class="btn">Надіслати</button>
+        </form>
+    </div>
+</body>
+</html>
