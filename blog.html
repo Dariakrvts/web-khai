@@ -27,11 +27,19 @@
         <h1>Kill all humans</h1>
         <div class="menu">
             <button
+            onclick="window.location.href='new-post.html';"
+            >
+                Add post
+            </button>
+            <button
             onclick="window.location.href='feedback.html';"
             >
               Home
             </button>
-            <button>Search</button>
+            <button
+            >
+            Search
+        </button>
             <button
             onclick="window.location.href='graph.html';"
             >
@@ -71,5 +79,26 @@
             </div>
         </div>
     </div>
+      <script>
+        // Отримуємо збережені пости з localStorage
+        window.onload = function() {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+            const postList = document.getElementById('post-list');
+            posts.forEach(post => {
+                const postDiv = document.createElement('div');
+                postDiv.classList.add('card', 'mt-3');
+                postDiv.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title">${post.title}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${post.category}</h6>
+                        <p class="card-text">${post.content}</p>
+                        <p class="card-text"><small class="text-muted">Теги: ${post.tags}</small></p>
+                    </div>
+                `;
+                postList.appendChild(postDiv);
+            });
+        }
+    </script>
 </body>
 </html>
