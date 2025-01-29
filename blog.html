@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futurama Quotes</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        function searchQuotes() {
+            let query = document.getElementById("search-input").value.toLowerCase();
+            let cards = document.querySelectorAll(".card");
+            
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="bender.png" alt="Bender">
+        <h1>Kill all humans</h1>
+        <div class="menu">
+            <button
+            onclick="window.location.href='feedback.html';"
+            >
+                Home
+            </button>
+            <button>Search</button>
+        </div>
+    </div>
+    <div class="blog-container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button onclick="searchQuotes()">Search</button>
+        </div>
+        <h2>Search results:</h2>
+        <div class="results">
+            <div class="card">
+                <h3>Kif, I have mated with a woman. Inform the men.</h3>
+                <button>Read more</button>
+            </div>
+            <div class="card">
+                <h3>Kids don't turn rotten just from watching TV.</h3>
+                <button>Read more</button>
+            </div>
+            <div class="card">
+                <h3>Kif, I have mated with a woman. Inform the men.</h3>
+                <button>Read more</button>
+            </div>
+            <div class="card">
+                <h3>Kids don't turn rotten just from watching TV.</h3>
+                <button>Read more</button>
+            </div>
+            <div class="card">
+                <h3>Kif, I have mated with a woman. Inform the men.</h3>
+                <button>Read more</button>
+            </div>
+            <div class="card">
+                <h3>Kids don't turn rotten just from watching TV.</h3>
+                <button>Read more</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

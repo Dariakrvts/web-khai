@@ -1,78 +1,169 @@
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-     font-family: Arial, sans-serif;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height: 100vh;
-     background: linear-gradient(to right, #43cea2, #185a9d);
-     margin: 0;
- }
+    height: 100vh;
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
 
- .container {
-     background: white;
-     padding: 25px;
-     border-radius: 12px;
-     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-     width: 400px;
-     text-align: center;
- }
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px;
+}
 
- .container h2 {
-     color: #185a9d;
-     margin-bottom: 20px;
-     font-size: 22px;
- }
+.blog-container {
+    background: white;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
 
- .input-box {
-     width: 100%;
-     margin: 15px 0;
-     text-align: left;
- }
+h2 {
+    color: #185a9d;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
 
- .input-box input,
- .input-box select,
- .input-box textarea {
-     width: 100%;
-     padding: 12px;
-     border: 1px solid #ccc;
-     border-radius: 6px;
-     font-size: 16px;
-     transition: 0.3s;
-     box-sizing: border-box;
- }
+.input-box {
+    width: 100%;
+    margin: 15px 0;
+    text-align: left;
+}
 
- .input-box input:focus,
- .input-box select:focus,
- .input-box textarea:focus {
-     border-color: #185a9d;
-     outline: none;
- }
+.input-box input,
+.input-box select,
+.input-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+}
 
- .input-box textarea {
-     min-height: 100px;
-     max-height: 300px;
-     resize: none;
-     overflow: hidden;
- }
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+    border-color: #185a9d;
+    outline: none;
+}
 
- .radio-group {
-     display: flex;
-     justify-content: space-between;
-     margin: 10px 0;
- }
+.input-box textarea {
+    min-height: 100px;
+    max-height: 300px;
+    resize: none;
+    overflow: hidden;
+}
 
- .btn {
-     background: #185a9d;
-     color: white;
-     padding: 12px;
-     border: none;
-     border-radius: 6px;
-     cursor: pointer;
-     font-size: 16px;
-     width: 100%;
-     transition: 0.3s;
- }
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
 
- .btn:hover {
-     background: #104e75;
- }
+.btn {
+    background: #185a9d;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #104e75;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.header img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.header h1 {
+    color: white;
+}
+
+.menu {
+    margin: 10px 0;
+}
+
+.menu button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+}
+
+.search-box {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background: orange;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 30%;
+    background: #fff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    color: #d38f0c;
+}
+
+.card button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: lightblue;
+    border-radius: 5px;
+}
