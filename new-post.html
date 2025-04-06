@@ -28,22 +28,26 @@
         <textarea class="form-control" id="body" name="body" rows="5" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Опублікувати</button>
+      <button type="submit" class="btn btn-primary"
+        onclick="window.location.href='blog.html';"
+      >На головну</button>
     </form>
   </div>
 
-  <script>
-    document.getElementById("postForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+<script>
+  document.getElementById('postForm').addEventListener('submit', function (e) {
+    e.preventDefault(); 
 
-      const title = document.getElementById("title").value;
-      const category = document.getElementById("category").value;
-      const body = document.getElementById("body").value;
+    const title = document.getElementById('title').value;
+    const category = document.getElementById('category').value;
+    const content = document.getElementById('content').value;
 
-      const post = { title, category, body };
-      localStorage.setItem("latestPost", JSON.stringify(post));
+    const newPost = { title, category, content };
+    const posts = JSON.parse(localStorage.getItem('posts')) || [];
 
-      window.location.href = "blog.html";
-    });
-  </script>
-</body>
-</html>
+    posts.push(newPost);
+    localStorage.setItem('posts', JSON.stringify(posts));
+
+    window.location.href = 'blog.html';
+  });
+</script>
