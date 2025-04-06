@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="uk">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Стовпчастий графік</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Опублікований пост</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-white">
+  <div class="container mt-5">
+    <h2 class="text-success">Опублікований пост</h2>
+    <div class="card mt-4">
+      <div class="card-body">
+        <h4 class="card-title" id="postTitle"></h4>
+        <h6 class="card-subtitle mb-2 text-muted" id="postCategory"></h6>
+        <p class="card-text mt-3" id="postBody"></p>
+      </div>
+    </div>
+    <a href="new-post.html" class="btn btn-outline-primary mt-4">Створити інший пост</a>
+  </div>
 
-        <div class="chart-container">
-            <h3>New posts per month</h3>
-            <div class="chart">
-                <div class="bar" data-value="15"><span>January</span></div>
-                <div class="bar" data-value="30"><span>February</span></div>
-                <div class="bar" data-value="1000"><span>March</span></div>
-            </div>
-            <button
-                type="submit"
-                class="btn"
-                onclick="window.location.href='blog.html';">
-                back</button>
-        </div>
-    </body>
+  <script>
+    const post = JSON.parse(localStorage.getItem("latestPost"));
+    if (post) {
+      document.getElementById("postTitle").textContent = post.title;
+      document.getElementById("postCategory").textContent = post.category;
+      document.getElementById("postBody").textContent = post.body;
+    } else {
+      document.querySelector(".card-body").innerHTML = "<p class='text-danger'>Немає збереженого поста для відображення.</p>";
+    }
+  </script>
+</body>
 </html>
